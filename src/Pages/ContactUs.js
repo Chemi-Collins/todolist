@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "@formspree/react";
+import MainLayout from '../Layout/MainLayout';
 
 export function ContactUs() {
   const [state, handleSubmit] = useForm("meoeeqbe");
@@ -8,6 +9,13 @@ export function ContactUs() {
     return <p>Thanks for joining!</p>;
   }
 
+  function MainLayout() {
+    return (
+        <MainLayout>
+        <div>Contact Us</div>
+        </MainLayout>
+    )
+  }
   return (
     <form className="fs-form" onSubmit={handleSubmit}>
       <div className="fs-field">

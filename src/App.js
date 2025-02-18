@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Pages/Navbar.js';
-import ContactUs from './Pages/ContactUs.js';
+import MainLayout from './Layout/MainLayout';
 
 function App() {
   const [todos, setTodos] = React.useState([])
@@ -13,11 +12,11 @@ function App() {
     const temp = localStorage.getItem("todos")
     const loadedTodos = JSON.parse(temp)
 
-      if(loadedTodos) {
-        setTodos(loadedTodos)
-      }
-}, [])
- 
+    if (loadedTodos) {
+      setTodos(loadedTodos)
+    }
+  }, [])
+
   React.useEffect(() => {
     const temp = JSON.stringify(todos)
     localStorage.setItem("todos", temp)
@@ -29,7 +28,7 @@ function App() {
     const newTodo = {
       id: new Date().getTime(),
       text: todo,
-      completed: false,
+      completed: false
     }
 
     setTodos([...todos].concat(newTodo))
@@ -55,7 +54,7 @@ function App() {
 
   function editTodo(id) {
     const updatedTodos = [...todos].map((todo) => {
-      if(todo.id === id) {
+      if (todo.id === id) {
         todo.text = editingText
       }
       return todo
@@ -66,35 +65,35 @@ function App() {
   }
 
   return (
-    <div className="App">
+
+    <MainLayout>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo}/>
+        <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} />
         <button type="submit">Add Task</button>
       </form>
-      {todos.map((todo) => <div key={todo.id}> 
+      {todos.map((todo) => <div key={todo.id}>
 
         {TodoEditing === todo.id ?
-        
-        (<input type="text" onChange={(e) => setEditingText(e.target.value)}
-        value={editingText} />)
+
+          (<input type="text" onChange={(e) => setEditingText(e.target.value)}
+            value={editingText} />)
           :
-        (<div>{todo.text}</div>)}
+          (<div>{todo.text}</div>)}
 
-      <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-      <input type="checkbox" onChange={() => toggleComplete(todo.id)}
-      checked={todo.completed} />
+        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+        <input type="checkbox" onChange={() => toggleComplete(todo.id)}
+          checked={todo.completed} />
 
-      {TodoEditing === todo.id ? (<button onClick={() => editTodo(todo.id)}
-      >Submit Updates</button>) : (<button onClick={() => setTodoEditing(todo.id)}
-      >Update Task</button>)}
-      
-      
-
-    </div>)}
-    </div>
-    
-  );
-
+        {TodoEditing === todo.id ? (<button onClick={() => editTodo(todo.id)}
+        >Submit Updates</button>) : (<button onClick={() => setTodoEditing(todo.id)}
+        >Update Task</button>)}
+      </div>
 }
 
-export default App;
+    </MainLayout>
+
+
+  );
+
+
+  export default App;
