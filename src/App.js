@@ -87,13 +87,11 @@ function App() {
         {TodoEditing === todo.id ? (<button onClick={() => editTodo(todo.id)}
         >Submit Updates</button>) : (<button onClick={() => setTodoEditing(todo.id)}
         >Update Task</button>)}
-      </div>
-}
+        </div>)}
 
+      
     </MainLayout>
-
-
   );
-
+}
 
   export default App;

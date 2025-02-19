@@ -9,15 +9,10 @@ export function ContactUs() {
     return <p>Thanks for joining!</p>;
   }
 
-  function MainLayout() {
     return (
         <MainLayout>
         <div>Contact Us</div>
-        </MainLayout>
-    )
-  }
-  return (
-    <form className="fs-form" onSubmit={handleSubmit}>
+        <form className="fs-form" onSubmit={handleSubmit}>
       <div className="fs-field">
         <label className="fs-label" htmlFor="firstname">
           First Name
@@ -51,7 +46,11 @@ export function ContactUs() {
         </button>
       </div>
     </form>
+        </MainLayout>
+    
+    
   );
+
 }
 
 export default ContactUs;

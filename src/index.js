@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { createBrowserRouter, RouterProvider, Route } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import ContactUs from './Pages/ContactUs';
 
 
@@ -10,7 +10,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-
+  },
+  {
     path: "/ContactUs",
     element: <ContactUs/>,
   },
