@@ -1,7 +1,9 @@
+Chemi Collins
 
+Todo list is a task tracker app that has the ability to add, edit, delete, and tasks complete.
+It's meant to help users manage their tasks in a very functional way.
 
-
-
+I used a combination of CSS, HTML, Javascript, and React to make this app.
 
 
 User stories
