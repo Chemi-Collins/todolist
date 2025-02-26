@@ -1,3 +1,15 @@
+
+
+
+
+
+
+User stories
+
+As a user, I want to create tasks with titles and descriptions so that I can clearly define what I need to do.
+As a user, I want to mark tasks as complete when I finish them so I can track my progress.
+As a user, I want to delete tasks that I no longer need so that I can keep my task list clean and manageable.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
